@@ -108,9 +108,9 @@ async function calculateRecommendations(potVolume, potType, plantType, season) {
 
   potData = cachedConstants.find(item => item.datatype === 'pot' && item.name === potType);
   
-  speciesData = data.find(item => item.datatype === 'species' && item.name === plantType);
+  speciesData = cachedConstants.find(item => item.datatype === 'species' && item.name === plantType);
   
-  seasonData = data.find(item => item.datatype === 'season' && item.name === season);
+  seasonData = cachedConstants.find(item => item.datatype === 'season' && item.name === season);
  
   let water = potVolume * 0.0001 *potdata.datafield_1*seasondata.datafield_1
   let fertilizer = water * seasondata.datafield_2

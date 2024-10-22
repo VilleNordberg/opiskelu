@@ -86,6 +86,8 @@ async function populateSeason() {
 }
 
 async function initialize() {
+  await fetchConstants();
+  await fetchData();
   await populatePottype()
   await populatePlantType()
   await populateSeason()

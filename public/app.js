@@ -85,10 +85,10 @@ async function populateSeason() {
   dropdown.appendChild(fragment);  // Update DOM in a single operation
 }
 
-function initialize() {
-  populatePottype()
-  populatePlantType()
-  populateSeason()
+async function initialize() {
+  await populatePottype()
+  await populatePlantType()
+  await populateSeason()
 
 }
 function calculatePotVolume(diameter, height) {
@@ -100,18 +100,11 @@ function calculatePotVolume(diameter, height) {
 async function calculateRecommendations(potVolume, potType, plantType, season) {
   if (!cachedConstants) return;
 
-  let potdata
-  let speciesdata
-  let seasondata
-  
   // more simplified and efficient data go through
+  let potdata = cachedConstants.find(item => item.datatype === 'pot' && item.name === potType);
+  let speciesdata = cachedConstants.find(item => item.datatype === 'species' && item.name === plantType);
+  let seasondata = cachedConstants.find(item => item.datatype === 'season' && item.name === season);
 
-  potData = cachedConstants.find(item => item.datatype === 'pot' && item.name === potType);
-  
-  speciesData = cachedConstants.find(item => item.datatype === 'species' && item.name === plantType);
-  
-  seasonData = cachedConstants.find(item => item.datatype === 'season' && item.name === season);
- 
   let water = potVolume * 0.0001 *potdata.datafield_1*seasondata.datafield_1
   let fertilizer = water * seasondata.datafield_2
 

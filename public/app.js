@@ -8,8 +8,8 @@ async function fetchData() {
 	  if(!data){
 		  const response = await fetch('data.json');
 		  data = await response.json();
-		  return data;
-	  }	
+	  }
+	return data;
   } catch (error) {
       console.error('Error fetching data:', error);
   }

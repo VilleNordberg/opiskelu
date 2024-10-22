@@ -42,7 +42,7 @@ async function populatePottype() {
       option.value = item.name;
       fragment.appendChild(option);
     }
-  }
+  });
   
   dropdown.appendChild(fragment);  // Update DOM in a single operation
 }
@@ -61,7 +61,7 @@ async function populatePlantType() {
       option.value = item.name;
       fragment.appendChild(option);
     }
-  }
+  });
   
   dropdown.appendChild(fragment);  // Update DOM in a single operation
 }
@@ -80,7 +80,7 @@ async function populateSeason() {
       option.value = item.name;
       fragment.appendChild(option);
     }
-  }
+  });
   
   dropdown.appendChild(fragment);  // Update DOM in a single operation
 }

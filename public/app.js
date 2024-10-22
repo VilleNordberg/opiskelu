@@ -1,6 +1,6 @@
 // Variables for cachedConstants & data
-const cachedConstants = null;
-const data = null;
+let cachedConstants = null;
+let data = null;
 
 // Function to fetch and process data from 'data.json'
 async function fetchData() {
